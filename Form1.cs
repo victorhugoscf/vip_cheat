@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using Guna.UI2.WinForms;
 using System.Threading.Tasks;
 using System.Text;
+using System.Net;
 
 namespace Cheat_VIP
 {
@@ -16,7 +17,7 @@ namespace Cheat_VIP
         private PastebinAuth pastebinAuth;
         private System.Windows.Forms.Timer memoryCheckTimer;
         private string loggedInUsername;
-        private const string LOCAL_VERSION = "1.0.1"; // Versão local do sistema
+        private const string LOCAL_VERSION = "1.0.2";
 
         private Dictionary<IntPtr, byte[]> originalCodes = new Dictionary<IntPtr, byte[]>();
 
@@ -35,17 +36,13 @@ namespace Cheat_VIP
             comboBox1.Items.AddRange(new string[] { "8", "9", "10", "11", "12", "13", "15", "25" });
             CarregarProcessos();
 
-            // Inicializa o Timer pra verificar a memória após 5 minutos
             memoryCheckTimer = new System.Windows.Forms.Timer
             {
-                Interval = 300000, // 5 minutos em milissegundos
-                Enabled = false // Não inicia automaticamente, só após login e attach
+                Interval = 300000, // 5 minutos
+                Enabled = false
             };
             memoryCheckTimer.Tick += new EventHandler(MemoryCheckTimer_Tick);
         }
-
-        // Removido o Form1_Load, pois a checagem foi movida para o login
-        private void Form1_Load(object sender, EventArgs e) { }
 
         private void CarregarProcessos()
         {
@@ -62,11 +59,7 @@ namespace Cheat_VIP
             var (loadSuccess, loadMessage) = await pastebinAuth.LoadMemoryAddressesAsync();
             if (!loadSuccess)
             {
-                guna2MessageDialog1.Buttons = MessageDialogButtons.OK;
-                guna2MessageDialog1.Icon = MessageDialogIcon.Error;
-                guna2MessageDialog1.Style = MessageDialogStyle.Dark;
-                guna2MessageDialog1.Parent = this;
-                guna2MessageDialog1.Show(loadMessage, "Erro");
+                ShowMessage(loadMessage, "Erro", MessageDialogIcon.Error);
                 return;
             }
 
@@ -113,18 +106,13 @@ namespace Cheat_VIP
                 }
                 else
                 {
-                    int lastError = GetLastError();
                     guna2HtmlLabel2.Text = "Não funcionando";
                     guna2HtmlLabel2.ForeColor = Color.Red;
                 }
             }
             else
             {
-                guna2MessageDialog1.Buttons = MessageDialogButtons.OK;
-                guna2MessageDialog1.Icon = MessageDialogIcon.Error;
-                guna2MessageDialog1.Style = MessageDialogStyle.Dark;
-                guna2MessageDialog1.Parent = this;
-                guna2MessageDialog1.Show("Falha ao anexar ao processo.", "Erro");
+                ShowMessage("Falha ao anexar ao processo.", "Erro", MessageDialogIcon.Error);
             }
         }
 
@@ -146,11 +134,7 @@ namespace Cheat_VIP
             }
             else
             {
-                guna2MessageDialog1.Buttons = MessageDialogButtons.OK;
-                guna2MessageDialog1.Icon = MessageDialogIcon.Warning;
-                guna2MessageDialog1.Style = MessageDialogStyle.Dark;
-                guna2MessageDialog1.Parent = this;
-                guna2MessageDialog1.Show("Falha ao enviar dados para o Discord. Tentando novamente em 5 minutos.", "Aviso");
+                ShowMessage("Falha ao enviar dados para o Discord. Tentando novamente em 5 minutos.", "Aviso", MessageDialogIcon.Warning);
                 memoryCheckTimer.Start();
             }
         }
@@ -160,7 +144,6 @@ namespace Cheat_VIP
             string username = guna2TextBox1.Text;
             string password = guna2TextBox2.Text;
 
-            // Primeiro, autentica o usuário
             var (authSuccess, authMessage) = await pastebinAuth.AuthenticateAsync(username, password);
 
             guna2MessageDialog1.Buttons = MessageDialogButtons.OK;
@@ -174,46 +157,291 @@ namespace Cheat_VIP
                 return;
             }
 
-            // Se a autenticação for bem-sucedida, verifica a versão
             var (remoteVersion, downloadUrl) = await pastebinAuth.CheckVersionAsync();
 
             if (remoteVersion == null)
             {
-                guna2MessageDialog1.Icon = MessageDialogIcon.Warning;
-                guna2MessageDialog1.Show("Erro ao verificar a versão no Pastebin. Prosseguindo com a versão local.", "Aviso");
+                ShowMessage("Erro ao verificar a versão. Prosseguindo com a versão local.", "Aviso", MessageDialogIcon.Warning);
             }
             else if (remoteVersion != LOCAL_VERSION)
             {
-                guna2MessageDialog1.Icon = MessageDialogIcon.Information;
-                guna2MessageDialog1.Show($"Nova versão disponível: {remoteVersion} (local: {LOCAL_VERSION}). Baixando...", "Atualização");
+                ShowMessage($"Nova versão disponível: {remoteVersion} (Atual: {LOCAL_VERSION}). Baixando...", "Atualização");
                 if (!string.IsNullOrEmpty(downloadUrl))
                 {
-                    Process.Start(new ProcessStartInfo
-                    {
-                        FileName = downloadUrl,
-                        UseShellExecute = true
-                    });
+                    Process.Start(new ProcessStartInfo { FileName = downloadUrl, UseShellExecute = true });
                     Application.Exit();
                 }
                 else
                 {
-                    guna2MessageDialog1.Show("Link de download não disponível. Contate o suporte.", "Erro");
+                    ShowMessage("Link de download não disponível. Contate o suporte.", "Erro", MessageDialogIcon.Error);
                     Application.Exit();
                 }
-                return; // Para aqui se precisar de atualização
+                return;
             }
 
-            // Se a versão está atualizada, prossegue com o login
             loggedInUsername = username;
-            guna2MessageDialog1.Icon = MessageDialogIcon.Information;
-            guna2MessageDialog1.Show(authMessage, "Sucesso");
-
+            ShowMessage(authMessage, "Sucesso");
             TabControl.TabPages.Add(tabPageProcess);
             TabControl.SelectedTab = tabPageProcess;
             CarregarProcessos();
         }
 
-        // Restante dos métodos (checkBox handlers, etc.) permanece igual
+        private void ShowMessage(string message, string caption, MessageDialogIcon icon = MessageDialogIcon.Information)
+        {
+            guna2MessageDialog1.Buttons = MessageDialogButtons.OK;
+            guna2MessageDialog1.Icon = icon;
+            guna2MessageDialog1.Style = MessageDialogStyle.Dark;
+            guna2MessageDialog1.Parent = this;
+            guna2MessageDialog1.Show(message, caption);
+        }
+
+        // Ajustes nos eventos de checkbox
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            IntPtr address = PastebinAuth.MemoryAddresses["Abs"];
+            int originalInstructionLength = 6;
+            string sourceRegister = "eax";
+            int offset = 0xF4;
+            string baseRegister = "esi";
+
+            if (checkBox4.Checked)
+            {
+                if (int.TryParse(textBoxValue3.Text, out int valor))
+                {
+                    byte[] originalCode = memoryManager.ReadMemory(address, originalInstructionLength);
+                    if (originalCode != null && originalCode.Length == originalInstructionLength)
+                    {
+                        memoryPatcher.HookInstruction(address, sourceRegister, offset, valor, originalInstructionLength, baseRegister);
+                    }
+                    else
+                    {
+                        ShowMessage("Falha ao ler o código original.", "Erro", MessageDialogIcon.Error);
+                        checkBox4.Checked = false;
+                    }
+                }
+                else
+                {
+                    ShowMessage("Valor inválido para Absorção.", "Erro", MessageDialogIcon.Error);
+                    checkBox4.Checked = false;
+                }
+            }
+            else
+            {
+                memoryPatcher.UnhookInstruction(address);
+            }
+        }
+
+        // Outros eventos ajustados para a nova assinatura
+        private void checkBoxValue1_CheckedChanged(object sender, EventArgs e)
+        {
+            IntPtr address = PastebinAuth.MemoryAddresses["MinDamage"];
+            int originalInstructionLength = 8;
+            string sourceRegister = "edx";
+            int offset = 0x0; // Ajuste conforme a instrução real
+            string baseRegister = "esi";
+
+            if (checkBoxValue1.Checked)
+            {
+                if (int.TryParse(textBoxValue1.Text, out int valor))
+                {
+                    byte[] originalCode = memoryManager.ReadMemory(address, originalInstructionLength);
+                    memoryPatcher.HookInstruction(address, sourceRegister, offset, valor, originalInstructionLength, baseRegister);
+                }
+                else
+                {
+                    ShowMessage("Valor inválido para dano mínimo.", "Erro", MessageDialogIcon.Error);
+                    checkBoxValue1.Checked = false;
+                }
+            }
+            else
+            {
+                memoryPatcher.UnhookInstruction(address);
+            }
+        }
+
+        private void checkBoxValue2_CheckedChanged(object sender, EventArgs e)
+        {
+            IntPtr address = PastebinAuth.MemoryAddresses["MaxDamage"];
+            int originalInstructionLength = 8;
+            string sourceRegister = "eax";
+            int offset = 0x0; // Ajuste conforme a instrução real
+            string baseRegister = "esi";
+
+            if (checkBoxValue2.Checked)
+            {
+                if (int.TryParse(textBoxValue2.Text, out int valor))
+                {
+                    byte[] originalCode = memoryManager.ReadMemory(address, originalInstructionLength);
+                    memoryPatcher.HookInstruction(address, sourceRegister, offset, valor, originalInstructionLength, baseRegister);
+                }
+                else
+                {
+                    ShowMessage("Valor inválido para dano máximo.", "Erro", MessageDialogIcon.Error);
+                    checkBoxValue2.Checked = false;
+                }
+            }
+            else
+            {
+                memoryPatcher.UnhookInstruction(address);
+            }
+        }
+
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            IntPtr address = PastebinAuth.MemoryAddresses["HPTotal"];
+            int originalInstructionLength = 5;
+            string sourceRegister = "eax";
+            int offset = 0x0; // Ajuste conforme a instrução real
+            string baseRegister = "esi";
+
+            if (checkBox5.Checked)
+            {
+                if (int.TryParse(textBoxValue4.Text, out int valor))
+                {
+                    byte[] originalCode = memoryManager.ReadMemory(address, originalInstructionLength);
+                    memoryPatcher.HookInstruction(address, sourceRegister, offset, valor, originalInstructionLength, baseRegister);
+                }
+                else
+                {
+                    ShowMessage("Valor inválido para o Total de HP.", "Erro", MessageDialogIcon.Error);
+                    checkBox5.Checked = false;
+                }
+            }
+            else
+            {
+                memoryPatcher.UnhookInstruction(address);
+            }
+        }
+
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        {
+            IntPtr address = PastebinAuth.MemoryAddresses["AtackSpeed"];
+            int originalInstructionLength = 6;
+            string sourceRegister = "ecx";
+            int offset = 0x0; // Ajuste conforme a instrução real
+            string baseRegister = "esi";
+
+            if (checkBox6.Checked)
+            {
+                if (comboBox1.SelectedItem != null && int.TryParse(comboBox1.SelectedItem.ToString(), out int valor))
+                {
+                    byte[] originalCode = memoryManager.ReadMemory(address, originalInstructionLength);
+                    memoryPatcher.HookInstruction(address, sourceRegister, offset, valor, originalInstructionLength, baseRegister);
+                }
+                else
+                {
+                    ShowMessage("Valor inválido ou opção não selecionada.", "Erro", MessageDialogIcon.Error);
+                    checkBox6.Checked = false;
+                }
+            }
+            else
+            {
+                memoryPatcher.UnhookInstruction(address);
+            }
+        }
+
+        private void checkBox7_CheckedChanged(object sender, EventArgs e)
+        {
+            IntPtr address = PastebinAuth.MemoryAddresses["VelSpeed"];
+            int originalInstructionLength = 6;
+            string sourceRegister = "eax";
+            int offset = 0x0; // Ajuste conforme a instrução real
+            string baseRegister = "esi";
+
+            if (checkBox7.Checked)
+            {
+                if (int.TryParse(textBoxValue5.Text, out int valor))
+                {
+                    byte[] originalCode = memoryManager.ReadMemory(address, originalInstructionLength);
+                    memoryPatcher.HookInstruction(address, sourceRegister, offset, valor, originalInstructionLength, baseRegister);
+                }
+                else
+                {
+                    ShowMessage("Valor inválido para a Velocidade de Movimento.", "Erro", MessageDialogIcon.Error);
+                    checkBox7.Checked = false;
+                }
+            }
+            else
+            {
+                memoryPatcher.UnhookInstruction(address);
+            }
+        }
+
+        private void checkBox8_CheckedChanged(object sender, EventArgs e)
+        {
+            IntPtr address = PastebinAuth.MemoryAddresses["Critico"];
+            int originalInstructionLength = 6;
+            string sourceRegister = "eax";
+            int offset = 0xE8;
+            string baseRegister = "esi";
+
+            if (checkBox8.Checked)
+            {
+                if (int.TryParse(textBoxValue6.Text, out int valor))
+                {
+                    byte[] originalCode = memoryManager.ReadMemory(address, originalInstructionLength);
+                    memoryPatcher.HookInstruction(address, sourceRegister, offset, valor, originalInstructionLength, baseRegister);
+                }
+                else
+                {
+                    ShowMessage("Valor inválido para o Crítico.", "Erro", MessageDialogIcon.Error);
+                    checkBox8.Checked = false;
+                }
+            }
+            else
+            {
+                memoryPatcher.UnhookInstruction(address);
+            }
+        }
+
+        private void checkBox9_CheckedChanged_1(object sender, EventArgs e)
+        {
+            IntPtr address = PastebinAuth.MemoryAddresses["Defesa"];
+            int originalInstructionLength = 6;
+            string sourceRegister = "eax";
+            int offset = 0xEC;
+            string baseRegister = "ecx";
+
+            if (checkBox9.Checked)
+            {
+                if (int.TryParse(textBoxValue7.Text, out int valor))
+                {
+                    byte[] originalCode = memoryManager.ReadMemory(address, originalInstructionLength);
+                    memoryPatcher.HookInstruction(address, sourceRegister, offset, valor, originalInstructionLength, baseRegister);
+                }
+                else
+                {
+                    ShowMessage("Valor inválido para a Defesa.", "Erro", MessageDialogIcon.Error);
+                    checkBox9.Checked = false;
+                }
+            }
+            else
+            {
+                memoryPatcher.UnhookInstruction(address);
+            }
+        }
+
+        private void guna2CheckBox9_CheckedChanged(object sender, EventArgs e)
+        {
+            IntPtr address = PastebinAuth.MemoryAddresses["EditLvl"];
+            int originalInstructionLength = 6;
+            string sourceRegister = "ebx";
+            int offset = 0x39D8; // Ajuste conforme a instrução real
+            string baseRegister = "ecx";
+
+            if (guna2CheckBox9.Checked)
+            {
+                int valor = -1; // 0xFFFFFFFF
+                byte[] originalCode = memoryManager.ReadMemory(address, originalInstructionLength);
+                memoryPatcher.HookInstruction(address, sourceRegister, offset, valor, originalInstructionLength, baseRegister);
+            }
+            else
+            {
+                memoryPatcher.UnhookInstruction(address);
+            }
+        }
+
+        // Métodos simples de WriteMemory permanecem iguais
         private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
         {
             memoryPatcher.WriteMemory(PastebinAuth.MemoryAddresses["TravaHP"], checkBox1.Checked ? new byte[] { 0xC3 } : new byte[] { 0x55 });
@@ -229,141 +457,23 @@ namespace Cheat_VIP
             memoryPatcher.WriteMemory(PastebinAuth.MemoryAddresses["TravaRES"], checkBox3.Checked ? new byte[] { 0xC3 } : new byte[] { 0x55 });
         }
 
-        private void checkBoxValue1_CheckedChanged(object sender, EventArgs e)
-        {
-            IntPtr address = PastebinAuth.MemoryAddresses["MinDamage"];
-            IntPtr returnAddress = PastebinAuth.MemoryAddresses["RetMinDamage"];
-            int originalInstructionLength = 8;
-            string register = "edx";
-
-            if (checkBoxValue1.Checked)
-            {
-                if (int.TryParse(textBoxValue1.Text, out int valor))
-                {
-                    byte[] originalCode = memoryManager.ReadMemory(address, 5);
-                    memoryPatcher.HookInstruction(address, valor, register, returnAddress, originalInstructionLength);
-                }
-                else
-                {
-                    guna2MessageDialog1.Buttons = MessageDialogButtons.OK;
-                    guna2MessageDialog1.Icon = MessageDialogIcon.Error;
-                    guna2MessageDialog1.Style = MessageDialogStyle.Dark;
-                    guna2MessageDialog1.Parent = this;
-                    guna2MessageDialog1.Show("Valor inválido para dano mínimo.", "Erro");
-                    checkBoxValue1.Checked = false;
-                }
-            }
-            else
-            {
-                memoryPatcher.UnhookInstruction(address);
-            }
-        }
-
-        private void checkBoxValue2_CheckedChanged(object sender, EventArgs e)
-        {
-            IntPtr address = PastebinAuth.MemoryAddresses["MaxDamage"];
-            IntPtr returnAddress = PastebinAuth.MemoryAddresses["RetMaxDamage"];
-            int originalInstructionLength = 8;
-            string register = "eax";
-
-            if (checkBoxValue2.Checked)
-            {
-                if (int.TryParse(textBoxValue2.Text, out int valor))
-                {
-                    byte[] originalCode = memoryManager.ReadMemory(address, 5);
-                    memoryPatcher.HookInstruction(address, valor, register, returnAddress, originalInstructionLength);
-                }
-                else
-                {
-                    guna2MessageDialog1.Buttons = MessageDialogButtons.OK;
-                    guna2MessageDialog1.Icon = MessageDialogIcon.Error;
-                    guna2MessageDialog1.Style = MessageDialogStyle.Dark;
-                    guna2MessageDialog1.Parent = this;
-                    guna2MessageDialog1.Show("Valor inválido para dano máximo.", "Erro");
-                    checkBoxValue2.Checked = false;
-                }
-            }
-            else
-            {
-                memoryPatcher.UnhookInstruction(address);
-            }
-        }
-
-        private void checkBox5_CheckedChanged(object sender, EventArgs e)
-        {
-            IntPtr address = PastebinAuth.MemoryAddresses["HPTotal"];
-            IntPtr returnAddress = PastebinAuth.MemoryAddresses["RetHPTotal"];
-            int originalInstructionLength = 5;
-            string register = "eax";
-
-            if (checkBox5.Checked)
-            {
-                if (int.TryParse(textBoxValue4.Text, out int valor))
-                {
-                    byte[] originalCode = memoryManager.ReadMemory(address, 5);
-                    memoryPatcher.HookInstruction(address, valor, register, returnAddress, originalInstructionLength);
-                }
-                else
-                {
-                    guna2MessageDialog1.Buttons = MessageDialogButtons.OK;
-                    guna2MessageDialog1.Icon = MessageDialogIcon.Error;
-                    guna2MessageDialog1.Style = MessageDialogStyle.Dark;
-                    guna2MessageDialog1.Parent = this;
-                    guna2MessageDialog1.Show("Valor inválido para o Total de HP.", "Erro");
-                    checkBox5.Checked = false;
-                }
-            }
-            else
-            {
-                memoryPatcher.UnhookInstruction(address);
-            }
-        }
-
-        private void checkBox6_CheckedChanged(object sender, EventArgs e)
-        {
-            IntPtr address = PastebinAuth.MemoryAddresses["AtackSpeed"];
-            IntPtr returnAddress = PastebinAuth.MemoryAddresses["RetAtackSpeed"];
-            int originalInstructionLength = 8;
-            string register = "edx";
-
-            if (checkBox6.Checked)
-            {
-                if (comboBox1.SelectedItem != null && int.TryParse(comboBox1.SelectedItem.ToString(), out int valor))
-                {
-                    byte[] originalCode = memoryManager.ReadMemory(address, 5);
-                    memoryPatcher.HookInstruction(address, valor, register, returnAddress, originalInstructionLength);
-                }
-                else
-                {
-                    guna2MessageDialog1.Buttons = MessageDialogButtons.OK;
-                    guna2MessageDialog1.Icon = MessageDialogIcon.Error;
-                    guna2MessageDialog1.Style = MessageDialogStyle.Dark;
-                    guna2MessageDialog1.Parent = this;
-                    guna2MessageDialog1.Show("Valor inválido ou opção não selecionada.", "Erro");
-                    checkBox6.Checked = false;
-                }
-            }
-            else
-            {
-                memoryPatcher.UnhookInstruction(address);
-            }
-        }
-
         private void checkBox11_CheckedChanged(object sender, EventArgs e)
         {
             memoryPatcher.WriteMemory(PastebinAuth.MemoryAddresses["LockItem"], checkBox11.Checked ? new byte[] { 0x00 } : new byte[] { 0x01 });
         }
 
-        private void btnAtualizarProcessos_Click_1(object sender, EventArgs e)
+        private void checkBox11_CheckedChanged_1(object sender, EventArgs e)
         {
-            CarregarProcessos();
+            memoryPatcher.WriteMemory(PastebinAuth.MemoryAddresses["BugTime"], checkBox11.Checked ? new byte[] { 0x01 } : new byte[] { 0x00 });
         }
+
+        // Outros métodos (btnAtualizarProcessos_Click_1, etc.) permanecem iguais
+        private void btnAtualizarProcessos_Click_1(object sender, EventArgs e) => CarregarProcessos();
 
         private void txtPesquisarProcesso_TextChanged(object sender, EventArgs e)
         {
             string filtro = txtPesquisarProcesso.Text.ToLower();
             listBoxProcessos.Items.Clear();
-
             Process[] processos = Process.GetProcesses();
             foreach (Process processo in processos)
             {
@@ -392,20 +502,11 @@ namespace Cheat_VIP
         {
             IntPtr address = PastebinAuth.MemoryAddresses["status"];
             byte[] memoryValue = memoryManager.ReadMemory(address, 4);
-
             if (memoryValue != null && memoryValue.Length >= 4)
             {
                 int valorLido = BitConverter.ToInt32(memoryValue, 0);
-                if (valorLido == 60)
-                {
-                    guna2HtmlLabel1.Text = "Ativado";
-                    guna2HtmlLabel1.ForeColor = Color.Green;
-                }
-                else
-                {
-                    guna2HtmlLabel1.Text = "Desativado";
-                    guna2HtmlLabel1.ForeColor = Color.Red;
-                }
+                guna2HtmlLabel1.Text = valorLido == 60 ? "Ativado" : "Desativado";
+                guna2HtmlLabel1.ForeColor = valorLido == 60 ? Color.Green : Color.Red;
             }
             else
             {
@@ -414,122 +515,67 @@ namespace Cheat_VIP
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            AtualizarStatus();
-        }
+        private void timer1_Tick(object sender, EventArgs e) => AtualizarStatus();
 
-        private void guna2HtmlLabel2_Click(object sender, EventArgs e) { }
-
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e) { }
-
-        private void guna2ImageButton3_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        private void guna2ImageButton3_Click(object sender, EventArgs e) => this.Close();
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
         {
-            string youtubeUrl = "https://www.youtube.com/@ViGo_Priston";
-            Process.Start(new ProcessStartInfo
-            {
-                FileName = youtubeUrl,
-                UseShellExecute = true
-            });
+            Process.Start(new ProcessStartInfo { FileName = "https://www.youtube.com/@ViGo_Priston", UseShellExecute = true });
         }
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
-            string discordUrl = "https://discord.com/users/952422340849971210";
-            Process.Start(new ProcessStartInfo
-            {
-                FileName = discordUrl,
-                UseShellExecute = true
-            });
+            Process.Start(new ProcessStartInfo { FileName = "https://discord.com/users/952422340849971210", UseShellExecute = true });
         }
 
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            IntPtr address = PastebinAuth.MemoryAddresses["Abs"];
-            IntPtr returnAddress = PastebinAuth.MemoryAddresses["RetAbs"];
-            int originalInstructionLength = 5;
-            string register = "eax";
-
-            if (checkBox4.Checked)
-            {
-                if (int.TryParse(textBoxValue3.Text, out int valor))
-                {
-                    byte[] originalCode = memoryManager.ReadMemory(address, 5);
-                    memoryPatcher.HookInstruction(address, valor, register, returnAddress, originalInstructionLength);
-                }
-                else
-                {
-                    guna2MessageDialog1.Buttons = MessageDialogButtons.OK;
-                    guna2MessageDialog1.Icon = MessageDialogIcon.Error;
-                    guna2MessageDialog1.Style = MessageDialogStyle.Dark;
-                    guna2MessageDialog1.Parent = this;
-                    guna2MessageDialog1.Show("Valor inválido para Absorção.", "Erro");
-                    checkBox4.Checked = false;
-                }
-            }
-            else
-            {
-                memoryPatcher.UnhookInstruction(address);
-            }
-        }
-
-        private void checkBox6_CheckedChanged_1(object sender, EventArgs e)
-        {
-            IntPtr address = PastebinAuth.MemoryAddresses["AtackSpeed"];
-            IntPtr returnAddress = PastebinAuth.MemoryAddresses["RetAtackSpeed"];
+            IntPtr address = PastebinAuth.MemoryAddresses["RangeAtack"];
             int originalInstructionLength = 6;
-            string register = "ecx";
+            string sourceRegister = "ecx";
+            int offset = 0xE4; // Ajuste conforme a instrução real
+            string baseRegister = "eax";
 
-            if (checkBox6.Checked)
+            if (guna2CheckBox1.Checked)
             {
-                if (comboBox1.SelectedItem != null && int.TryParse(comboBox1.SelectedItem.ToString(), out int valor))
+                if (int.TryParse(guna2TextBox3.Text, out int valor))
                 {
-                    byte[] originalCode = memoryManager.ReadMemory(address, 5);
-                    memoryPatcher.HookInstruction(address, valor, register, returnAddress, originalInstructionLength);
+                    byte[] originalCode = memoryManager.ReadMemory(address, originalInstructionLength);
+                    memoryPatcher.HookInstruction(address, sourceRegister, offset, valor, originalInstructionLength, baseRegister);
                 }
                 else
                 {
-                    guna2MessageDialog1.Buttons = MessageDialogButtons.OK;
-                    guna2MessageDialog1.Icon = MessageDialogIcon.Error;
-                    guna2MessageDialog1.Style = MessageDialogStyle.Dark;
-                    guna2MessageDialog1.Parent = this;
-                    guna2MessageDialog1.Show("Valor inválido ou opção não selecionada.", "Erro");
-                    checkBox6.Checked = false;
+                    ShowMessage("Valor inválido para o Ranger.", "Erro", MessageDialogIcon.Error);
+                    guna2CheckBox1.Checked = false;
                 }
             }
             else
             {
                 memoryPatcher.UnhookInstruction(address);
             }
+
         }
 
-        private void checkBox7_CheckedChanged(object sender, EventArgs e)
+        private void guna2CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
             IntPtr address = PastebinAuth.MemoryAddresses["VelSpeed"];
-            IntPtr returnAddress = PastebinAuth.MemoryAddresses["RetVelSpeed"];
             int originalInstructionLength = 6;
-            string register = "eax";
+            string sourceRegister = "eax";
+            int offset = 0xF8;
+            string baseRegister = "ecx";
 
-            if (checkBox7.Checked)
+            if (guna2CheckBox2.Checked)
             {
-                if (int.TryParse(textBoxValue5.Text, out int valor))
+                if (int.TryParse(guna2TextBox4.Text, out int valor))
                 {
-                    byte[] originalCode = memoryManager.ReadMemory(address, 5);
-                    memoryPatcher.HookInstruction(address, valor, register, returnAddress, originalInstructionLength);
+                    byte[] originalCode = memoryManager.ReadMemory(address, originalInstructionLength);
+                    memoryPatcher.HookInstruction(address, sourceRegister, offset, valor, originalInstructionLength, baseRegister);
                 }
                 else
                 {
-                    guna2MessageDialog1.Buttons = MessageDialogButtons.OK;
-                    guna2MessageDialog1.Icon = MessageDialogIcon.Error;
-                    guna2MessageDialog1.Style = MessageDialogStyle.Dark;
-                    guna2MessageDialog1.Parent = this;
-                    guna2MessageDialog1.Show("Valor inválido para a Velocidade de Movimento.", "Erro");
-                    checkBox7.Checked = false;
+                    ShowMessage("Valor inválido para a Vel Speed.", "Erro", MessageDialogIcon.Error);
+                    guna2CheckBox2.Checked = false;
                 }
             }
             else
@@ -538,58 +584,25 @@ namespace Cheat_VIP
             }
         }
 
-        private void checkBox8_CheckedChanged(object sender, EventArgs e)
-        {
-            IntPtr address = PastebinAuth.MemoryAddresses["Critico"];
-            IntPtr returnAddress = PastebinAuth.MemoryAddresses["RetCritico"];
-            int originalInstructionLength = 6;
-            string register = "eax";
-
-            if (checkBox8.Checked)
-            {
-                if (int.TryParse(textBoxValue6.Text, out int valor))
-                {
-                    byte[] originalCode = memoryManager.ReadMemory(address, 5);
-                    memoryPatcher.HookInstruction(address, valor, register, returnAddress, originalInstructionLength);
-                }
-                else
-                {
-                    guna2MessageDialog1.Buttons = MessageDialogButtons.OK;
-                    guna2MessageDialog1.Icon = MessageDialogIcon.Error;
-                    guna2MessageDialog1.Style = MessageDialogStyle.Dark;
-                    guna2MessageDialog1.Parent = this;
-                    guna2MessageDialog1.Show("Valor inválido para o Crítico.", "Erro");
-                    checkBox8.Checked = false;
-                }
-            }
-            else
-            {
-                memoryPatcher.UnhookInstruction(address);
-            }
-        }
-
-        private void checkBox9_CheckedChanged_1(object sender, EventArgs e)
+        private void guna2CheckBox3_CheckedChanged(object sender, EventArgs e)
         {
             IntPtr address = PastebinAuth.MemoryAddresses["Block"];
-            IntPtr returnAddress = PastebinAuth.MemoryAddresses["RetBlock"];
-            int originalInstructionLength = 5;
-            string register = "eax";
+            int originalInstructionLength = 6;
+            string sourceRegister = "ecx";
+            int offset = 0xF0;
+            string baseRegister = "eax";
 
-            if (checkBox9.Checked)
+            if (guna2CheckBox3.Checked)
             {
-                if (int.TryParse(textBoxValue7.Text, out int valor))
+                if (int.TryParse(guna2TextBox5.Text, out int valor))
                 {
-                    byte[] originalCode = memoryManager.ReadMemory(address, 5);
-                    memoryPatcher.HookInstruction(address, valor, register, returnAddress, originalInstructionLength);
+                    byte[] originalCode = memoryManager.ReadMemory(address, originalInstructionLength);
+                    memoryPatcher.HookInstruction(address, sourceRegister, offset, valor, originalInstructionLength, baseRegister);
                 }
                 else
                 {
-                    guna2MessageDialog1.Buttons = MessageDialogButtons.OK;
-                    guna2MessageDialog1.Icon = MessageDialogIcon.Error;
-                    guna2MessageDialog1.Style = MessageDialogStyle.Dark;
-                    guna2MessageDialog1.Parent = this;
-                    guna2MessageDialog1.Show("Valor inválido para a Defesa.", "Erro");
-                    checkBox9.Checked = false;
+                    ShowMessage("Valor inválido para o block", "Erro", MessageDialogIcon.Error);
+                    guna2CheckBox3.Checked = false;
                 }
             }
             else
@@ -598,56 +611,129 @@ namespace Cheat_VIP
             }
         }
 
-        private void guna2CheckBox9_CheckedChanged(object sender, EventArgs e)
+        private void guna2CheckBox4_CheckedChanged(object sender, EventArgs e)
         {
-            IntPtr address = PastebinAuth.MemoryAddresses["EditLvl"];
-            IntPtr returnAddress = PastebinAuth.MemoryAddresses["RetEditLvl"];
-            int originalInstructionLength = 6;
-            string register = "ebx";
 
-            if (guna2CheckBox9.Checked)
+            IntPtr address = PastebinAuth.MemoryAddresses["HPTotal"];
+            int originalInstructionLength = 7;
+            string sourceRegister = "eax";
+            int offset = 0x126;
+            string baseRegister = "esi";
+
+            if (guna2CheckBox4.Checked)
             {
-                int valor = -1; // 0xFFFFFFFF como int com sinal
-                byte[] originalCode = memoryManager.ReadMemory(address, 5);
-                memoryPatcher.HookInstruction(address, valor, register, returnAddress, originalInstructionLength);
+                if (int.TryParse(guna2TextBox6.Text, out int valor))
+                {
+                    byte[] originalCode = memoryManager.ReadMemory(address, originalInstructionLength);
+                    memoryPatcher.HookInstruction(address, sourceRegister, offset, valor, originalInstructionLength, baseRegister);
+                }
+                else
+                {
+                    ShowMessage("Valor inválido para o block", "Erro", MessageDialogIcon.Error);
+                    guna2CheckBox4.Checked = false;
+                }
             }
             else
             {
                 memoryPatcher.UnhookInstruction(address);
             }
+
         }
 
-        private void checkBox11_CheckedChanged_1(object sender, EventArgs e)
+        private void guna2CheckBox5_CheckedChanged(object sender, EventArgs e)
         {
-            memoryPatcher.WriteMemory(PastebinAuth.MemoryAddresses["BugTime"], checkBox11.Checked ? new byte[] { 0x01 } : new byte[] { 0x00 });
+            IntPtr address = PastebinAuth.MemoryAddresses["AddPeso"];
+            int originalInstructionLength = 7;
+            string sourceRegister = "edx";
+            int offset = 0x102;
+            string baseRegister = "ecx";
+
+            if (guna2CheckBox5.Checked)
+            {
+                if (int.TryParse(guna2TextBox7.Text, out int valor))
+                {
+                    byte[] originalCode = memoryManager.ReadMemory(address, originalInstructionLength);
+                    memoryPatcher.HookInstruction(address, sourceRegister, offset, valor, originalInstructionLength, baseRegister);
+                }
+                else
+                {
+                    ShowMessage("Valor inválido para o peso", "Erro", MessageDialogIcon.Error);
+                    guna2CheckBox5.Checked = false;
+                }
+            }
+            else
+            {
+                memoryPatcher.UnhookInstruction(address);
+            }
+
         }
 
         private void checkBoxValue1_CheckedChanged_1(object sender, EventArgs e)
         {
-            if (int.TryParse(textBoxValue1.Text, out int valor))
+            IntPtr address = PastebinAuth.MemoryAddresses["ATA"];
+
+            if (checkBoxValue1.Checked)
             {
-                if (valor >= 0 && valor <= int.MaxValue)
+                if (int.TryParse(textBoxValue1.Text, out int valor))
                 {
+                    // Converte o valor inteiro para bytes (4 bytes, little-endian)
                     byte[] byteValue = BitConverter.GetBytes(valor);
-                    memoryPatcher.WriteMemory(PastebinAuth.MemoryAddresses["MinDamage"], byteValue);
-                    Console.WriteLine($"Escrevendo {valor} (decimal) = {valor:X8} (hex) em MinDamage");
+                    if (memoryPatcher.WriteMemory(address, byteValue))
+                    {
+                        Console.WriteLine($"Escreveu {valor} (decimal) = {valor:X8} (hex) em ATA");
+                    }
+                    else
+                    {
+                        ShowMessage("Falha ao escrever o valor no endereço.", "Erro", MessageDialogIcon.Error);
+                        checkBoxValue1.Checked = false;
+                    }
                 }
                 else
                 {
-                    guna2MessageDialog1.Buttons = MessageDialogButtons.OK;
-                    guna2MessageDialog1.Icon = MessageDialogIcon.Error;
-                    guna2MessageDialog1.Style = MessageDialogStyle.Dark;
-                    guna2MessageDialog1.Parent = this;
-                    guna2MessageDialog1.Show("Digite um valor entre 0 e " + int.MaxValue + ".", "Erro");
+                    ShowMessage("Valor inválido para dano da atalanta.", "Erro", MessageDialogIcon.Error);
+                    checkBoxValue1.Checked = false;
                 }
             }
             else
             {
-                guna2MessageDialog1.Buttons = MessageDialogButtons.OK;
-                guna2MessageDialog1.Icon = MessageDialogIcon.Error;
-                guna2MessageDialog1.Style = MessageDialogStyle.Dark;
-                guna2MessageDialog1.Parent = this;
-                guna2MessageDialog1.Show("Valor inválido para dano da atalanta.", "Erro");
+                // Opcional: Restaurar um valor padrão ou original, se desejar
+                byte[] defaultValue = BitConverter.GetBytes(97); // Exemplo: restaurar para 0
+                memoryPatcher.WriteMemory(address, defaultValue);
+            }
+        }
+        
+
+        private void guna2CheckBox6_CheckedChanged(object sender, EventArgs e)
+        {
+            IntPtr address = PastebinAuth.MemoryAddresses["FS"];
+
+            if (guna2CheckBox6.Checked)
+            {
+                if (int.TryParse(guna2TextBox8.Text, out int valor))
+                {
+                    
+                    byte[] byteValue = BitConverter.GetBytes(valor);
+                    if (memoryPatcher.WriteMemory(address, byteValue))
+                    {
+                        Console.WriteLine($"Escreveu {valor} (decimal) = {valor:X8} (hex) em FS");
+                    }
+                    else
+                    {
+                        ShowMessage("Falha ao escrever o valor no endereço.", "Erro", MessageDialogIcon.Error);
+                        guna2CheckBox6.Checked = false;
+                    }
+                }
+                else
+                {
+                    ShowMessage("Valor inválido para dano do FS.", "Erro", MessageDialogIcon.Error);
+                    guna2CheckBox6.Checked = false;
+                }
+            }
+            else
+            {
+                
+                byte[] defaultValue = BitConverter.GetBytes(72); 
+                memoryPatcher.WriteMemory(address, defaultValue);
             }
         }
     }
