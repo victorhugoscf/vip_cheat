@@ -36,8 +36,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -46,24 +46,26 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -71,6 +73,16 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges47 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges48 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges49 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges50 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges51 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             comboBoxValue1 = new ComboBox();
             tabPageCheats = new TabPage();
             guna2vSeparator4 = new Guna.UI2.WinForms.Guna2VSeparator();
@@ -81,6 +93,18 @@
             checkBox3 = new Guna.UI2.WinForms.Guna2CheckBox();
             checkBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
             guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
+            guna2TextBox8 = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2CheckBox6 = new Guna.UI2.WinForms.Guna2CheckBox();
+            guna2TextBox7 = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2CheckBox5 = new Guna.UI2.WinForms.Guna2CheckBox();
+            guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2CheckBox4 = new Guna.UI2.WinForms.Guna2CheckBox();
+            guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2CheckBox3 = new Guna.UI2.WinForms.Guna2CheckBox();
+            guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2CheckBox2 = new Guna.UI2.WinForms.Guna2CheckBox();
+            guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
             guna2CheckBox9 = new Guna.UI2.WinForms.Guna2CheckBox();
             textBoxValue7 = new Guna.UI2.WinForms.Guna2TextBox();
             checkBox9 = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -217,7 +241,7 @@
             checkBox11.CheckedState.BorderThickness = 0;
             checkBox11.CheckedState.FillColor = Color.FromArgb(31, 41, 55);
             guna2Transition17.SetDecoration(checkBox11, Guna.UI2.AnimatorNS.DecorationType.None);
-            checkBox11.Location = new Point(8, 52);
+            checkBox11.Location = new Point(20, 52);
             checkBox11.Name = "checkBox11";
             checkBox11.Size = new Size(66, 19);
             checkBox11.TabIndex = 0;
@@ -316,6 +340,18 @@
             // 
             guna2GroupBox3.BackColor = Color.DimGray;
             guna2GroupBox3.BorderColor = Color.DimGray;
+            guna2GroupBox3.Controls.Add(guna2TextBox8);
+            guna2GroupBox3.Controls.Add(guna2CheckBox6);
+            guna2GroupBox3.Controls.Add(guna2TextBox7);
+            guna2GroupBox3.Controls.Add(guna2CheckBox5);
+            guna2GroupBox3.Controls.Add(guna2TextBox6);
+            guna2GroupBox3.Controls.Add(guna2CheckBox4);
+            guna2GroupBox3.Controls.Add(guna2TextBox5);
+            guna2GroupBox3.Controls.Add(guna2CheckBox3);
+            guna2GroupBox3.Controls.Add(guna2TextBox4);
+            guna2GroupBox3.Controls.Add(guna2CheckBox2);
+            guna2GroupBox3.Controls.Add(guna2TextBox3);
+            guna2GroupBox3.Controls.Add(guna2CheckBox1);
             guna2GroupBox3.Controls.Add(guna2CheckBox9);
             guna2GroupBox3.Controls.Add(textBoxValue7);
             guna2GroupBox3.Controls.Add(checkBox9);
@@ -326,7 +362,7 @@
             guna2GroupBox3.Controls.Add(checkBox4);
             guna2GroupBox3.Controls.Add(checkBoxValue1);
             guna2GroupBox3.CustomBorderColor = Color.FromArgb(64, 64, 64);
-            guna2GroupBox3.CustomizableEdges = customizableEdges13;
+            guna2GroupBox3.CustomizableEdges = customizableEdges25;
             guna2Transition17.SetDecoration(guna2GroupBox3, Guna.UI2.AnimatorNS.DecorationType.None);
             guna2GroupBox3.FillColor = Color.FromArgb(19, 19, 19);
             guna2GroupBox3.Font = new Font("Segoe UI", 9F);
@@ -334,10 +370,277 @@
             guna2GroupBox3.ImeMode = ImeMode.NoControl;
             guna2GroupBox3.Location = new Point(13, 105);
             guna2GroupBox3.Name = "guna2GroupBox3";
-            guna2GroupBox3.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2GroupBox3.ShadowDecoration.CustomizableEdges = customizableEdges26;
             guna2GroupBox3.Size = new Size(302, 138);
             guna2GroupBox3.TabIndex = 2;
             guna2GroupBox3.Text = "Editar Status";
+            // 
+            // guna2TextBox8
+            // 
+            guna2TextBox8.BackColor = Color.FromArgb(55, 65, 81);
+            guna2TextBox8.BorderColor = Color.Transparent;
+            guna2TextBox8.CustomizableEdges = customizableEdges5;
+            guna2Transition17.SetDecoration(guna2TextBox8, Guna.UI2.AnimatorNS.DecorationType.None);
+            guna2TextBox8.DefaultText = "";
+            guna2TextBox8.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            guna2TextBox8.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            guna2TextBox8.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox8.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox8.FillColor = Color.FromArgb(55, 65, 81);
+            guna2TextBox8.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox8.Font = new Font("Segoe UI", 9F);
+            guna2TextBox8.ForeColor = Color.White;
+            guna2TextBox8.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox8.Location = new Point(255, 69);
+            guna2TextBox8.Name = "guna2TextBox8";
+            guna2TextBox8.PlaceholderText = "";
+            guna2TextBox8.SelectedText = "";
+            guna2TextBox8.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2TextBox8.Size = new Size(35, 19);
+            guna2TextBox8.TabIndex = 32;
+            // 
+            // guna2CheckBox6
+            // 
+            guna2CheckBox6.AutoSize = true;
+            guna2CheckBox6.BackColor = Color.FromArgb(18, 18, 18);
+            guna2CheckBox6.CheckedState.BorderColor = Color.FromArgb(31, 41, 55);
+            guna2CheckBox6.CheckedState.BorderRadius = 0;
+            guna2CheckBox6.CheckedState.BorderThickness = 0;
+            guna2CheckBox6.CheckedState.FillColor = Color.FromArgb(31, 41, 55);
+            guna2Transition17.SetDecoration(guna2CheckBox6, Guna.UI2.AnimatorNS.DecorationType.None);
+            guna2CheckBox6.Location = new Point(207, 69);
+            guna2CheckBox6.Name = "guna2CheckBox6";
+            guna2CheckBox6.Size = new Size(38, 19);
+            guna2CheckBox6.TabIndex = 31;
+            guna2CheckBox6.Text = "FS";
+            guna2CheckBox6.UncheckedState.BorderColor = Color.FromArgb(55, 65, 81);
+            guna2CheckBox6.UncheckedState.BorderRadius = 0;
+            guna2CheckBox6.UncheckedState.BorderThickness = 0;
+            guna2CheckBox6.UncheckedState.FillColor = Color.FromArgb(55, 65, 81);
+            guna2CheckBox6.UseVisualStyleBackColor = false;
+            guna2CheckBox6.CheckedChanged += guna2CheckBox6_CheckedChanged;
+            // 
+            // guna2TextBox7
+            // 
+            guna2TextBox7.BorderColor = Color.Transparent;
+            guna2TextBox7.CustomizableEdges = customizableEdges7;
+            guna2Transition17.SetDecoration(guna2TextBox7, Guna.UI2.AnimatorNS.DecorationType.None);
+            guna2TextBox7.DefaultText = "";
+            guna2TextBox7.DisabledState.BorderColor = Color.FromArgb(55, 65, 81);
+            guna2TextBox7.DisabledState.FillColor = Color.FromArgb(55, 65, 81);
+            guna2TextBox7.DisabledState.ForeColor = Color.FromArgb(55, 65, 81);
+            guna2TextBox7.DisabledState.PlaceholderForeColor = Color.FromArgb(55, 65, 81);
+            guna2TextBox7.Enabled = false;
+            guna2TextBox7.FillColor = Color.FromArgb(55, 65, 81);
+            guna2TextBox7.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox7.Font = new Font("Segoe UI", 9F);
+            guna2TextBox7.ForeColor = Color.White;
+            guna2TextBox7.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox7.Location = new Point(166, 92);
+            guna2TextBox7.Name = "guna2TextBox7";
+            guna2TextBox7.PlaceholderText = "";
+            guna2TextBox7.SelectedText = "";
+            guna2TextBox7.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2TextBox7.Size = new Size(35, 19);
+            guna2TextBox7.TabIndex = 30;
+            // 
+            // guna2CheckBox5
+            // 
+            guna2CheckBox5.AutoSize = true;
+            guna2CheckBox5.BackColor = Color.FromArgb(18, 18, 18);
+            guna2CheckBox5.CheckedState.BorderColor = Color.FromArgb(31, 41, 55);
+            guna2CheckBox5.CheckedState.BorderRadius = 0;
+            guna2CheckBox5.CheckedState.BorderThickness = 0;
+            guna2CheckBox5.CheckedState.FillColor = Color.FromArgb(31, 41, 55);
+            guna2Transition17.SetDecoration(guna2CheckBox5, Guna.UI2.AnimatorNS.DecorationType.None);
+            guna2CheckBox5.Enabled = false;
+            guna2CheckBox5.Location = new Point(107, 94);
+            guna2CheckBox5.Name = "guna2CheckBox5";
+            guna2CheckBox5.Size = new Size(51, 19);
+            guna2CheckBox5.TabIndex = 29;
+            guna2CheckBox5.Text = "Peso";
+            guna2CheckBox5.UncheckedState.BorderColor = Color.FromArgb(55, 65, 81);
+            guna2CheckBox5.UncheckedState.BorderRadius = 0;
+            guna2CheckBox5.UncheckedState.BorderThickness = 0;
+            guna2CheckBox5.UncheckedState.FillColor = Color.FromArgb(55, 65, 81);
+            guna2CheckBox5.UseVisualStyleBackColor = false;
+            guna2CheckBox5.CheckedChanged += guna2CheckBox5_CheckedChanged;
+            // 
+            // guna2TextBox6
+            // 
+            guna2TextBox6.BorderColor = Color.Transparent;
+            guna2TextBox6.CustomizableEdges = customizableEdges9;
+            guna2Transition17.SetDecoration(guna2TextBox6, Guna.UI2.AnimatorNS.DecorationType.None);
+            guna2TextBox6.DefaultText = "";
+            guna2TextBox6.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            guna2TextBox6.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            guna2TextBox6.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox6.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox6.FillColor = Color.FromArgb(55, 65, 81);
+            guna2TextBox6.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox6.Font = new Font("Segoe UI", 9F);
+            guna2TextBox6.ForeColor = Color.White;
+            guna2TextBox6.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox6.Location = new Point(66, 43);
+            guna2TextBox6.Name = "guna2TextBox6";
+            guna2TextBox6.PlaceholderText = "";
+            guna2TextBox6.SelectedText = "";
+            guna2TextBox6.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2TextBox6.Size = new Size(35, 19);
+            guna2TextBox6.TabIndex = 28;
+            // 
+            // guna2CheckBox4
+            // 
+            guna2CheckBox4.AutoSize = true;
+            guna2CheckBox4.BackColor = Color.FromArgb(18, 18, 18);
+            guna2CheckBox4.CheckedState.BorderColor = Color.FromArgb(31, 41, 55);
+            guna2CheckBox4.CheckedState.BorderRadius = 0;
+            guna2CheckBox4.CheckedState.BorderThickness = 0;
+            guna2CheckBox4.CheckedState.FillColor = Color.FromArgb(31, 41, 55);
+            guna2Transition17.SetDecoration(guna2CheckBox4, Guna.UI2.AnimatorNS.DecorationType.None);
+            guna2CheckBox4.Location = new Point(10, 44);
+            guna2CheckBox4.Name = "guna2CheckBox4";
+            guna2CheckBox4.Size = new Size(42, 19);
+            guna2CheckBox4.TabIndex = 27;
+            guna2CheckBox4.Text = "HP";
+            guna2CheckBox4.UncheckedState.BorderColor = Color.FromArgb(55, 65, 81);
+            guna2CheckBox4.UncheckedState.BorderRadius = 0;
+            guna2CheckBox4.UncheckedState.BorderThickness = 0;
+            guna2CheckBox4.UncheckedState.FillColor = Color.FromArgb(55, 65, 81);
+            guna2CheckBox4.UseVisualStyleBackColor = false;
+            guna2CheckBox4.CheckedChanged += guna2CheckBox4_CheckedChanged;
+            // 
+            // guna2TextBox5
+            // 
+            guna2TextBox5.BorderColor = Color.Transparent;
+            guna2TextBox5.CustomizableEdges = customizableEdges11;
+            guna2Transition17.SetDecoration(guna2TextBox5, Guna.UI2.AnimatorNS.DecorationType.None);
+            guna2TextBox5.DefaultText = "";
+            guna2TextBox5.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            guna2TextBox5.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            guna2TextBox5.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox5.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox5.FillColor = Color.FromArgb(55, 65, 81);
+            guna2TextBox5.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox5.Font = new Font("Segoe UI", 9F);
+            guna2TextBox5.ForeColor = Color.White;
+            guna2TextBox5.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox5.Location = new Point(166, 116);
+            guna2TextBox5.Name = "guna2TextBox5";
+            guna2TextBox5.PlaceholderText = "";
+            guna2TextBox5.SelectedText = "";
+            guna2TextBox5.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2TextBox5.Size = new Size(35, 19);
+            guna2TextBox5.TabIndex = 26;
+            // 
+            // guna2CheckBox3
+            // 
+            guna2CheckBox3.AutoSize = true;
+            guna2CheckBox3.BackColor = Color.FromArgb(18, 18, 18);
+            guna2CheckBox3.CheckedState.BorderColor = Color.FromArgb(31, 41, 55);
+            guna2CheckBox3.CheckedState.BorderRadius = 0;
+            guna2CheckBox3.CheckedState.BorderThickness = 0;
+            guna2CheckBox3.CheckedState.FillColor = Color.FromArgb(31, 41, 55);
+            guna2Transition17.SetDecoration(guna2CheckBox3, Guna.UI2.AnimatorNS.DecorationType.None);
+            guna2CheckBox3.Location = new Point(107, 117);
+            guna2CheckBox3.Name = "guna2CheckBox3";
+            guna2CheckBox3.Size = new Size(55, 19);
+            guna2CheckBox3.TabIndex = 25;
+            guna2CheckBox3.Text = "Block";
+            guna2CheckBox3.UncheckedState.BorderColor = Color.FromArgb(55, 65, 81);
+            guna2CheckBox3.UncheckedState.BorderRadius = 0;
+            guna2CheckBox3.UncheckedState.BorderThickness = 0;
+            guna2CheckBox3.UncheckedState.FillColor = Color.FromArgb(55, 65, 81);
+            guna2CheckBox3.UseVisualStyleBackColor = false;
+            guna2CheckBox3.CheckedChanged += guna2CheckBox3_CheckedChanged;
+            // 
+            // guna2TextBox4
+            // 
+            guna2TextBox4.BorderColor = Color.Transparent;
+            guna2TextBox4.CustomizableEdges = customizableEdges13;
+            guna2Transition17.SetDecoration(guna2TextBox4, Guna.UI2.AnimatorNS.DecorationType.None);
+            guna2TextBox4.DefaultText = "";
+            guna2TextBox4.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            guna2TextBox4.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            guna2TextBox4.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox4.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox4.FillColor = Color.FromArgb(55, 65, 81);
+            guna2TextBox4.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox4.Font = new Font("Segoe UI", 9F);
+            guna2TextBox4.ForeColor = Color.White;
+            guna2TextBox4.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox4.Location = new Point(166, 43);
+            guna2TextBox4.Name = "guna2TextBox4";
+            guna2TextBox4.PlaceholderText = "";
+            guna2TextBox4.SelectedText = "";
+            guna2TextBox4.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2TextBox4.Size = new Size(35, 19);
+            guna2TextBox4.TabIndex = 24;
+            // 
+            // guna2CheckBox2
+            // 
+            guna2CheckBox2.AutoSize = true;
+            guna2CheckBox2.BackColor = Color.FromArgb(18, 18, 18);
+            guna2CheckBox2.CheckedState.BorderColor = Color.FromArgb(31, 41, 55);
+            guna2CheckBox2.CheckedState.BorderRadius = 0;
+            guna2CheckBox2.CheckedState.BorderThickness = 0;
+            guna2CheckBox2.CheckedState.FillColor = Color.FromArgb(31, 41, 55);
+            guna2Transition17.SetDecoration(guna2CheckBox2, Guna.UI2.AnimatorNS.DecorationType.None);
+            guna2CheckBox2.Location = new Point(107, 44);
+            guna2CheckBox2.Name = "guna2CheckBox2";
+            guna2CheckBox2.Size = new Size(60, 19);
+            guna2CheckBox2.TabIndex = 23;
+            guna2CheckBox2.Text = "Vel. Sp";
+            guna2CheckBox2.UncheckedState.BorderColor = Color.FromArgb(55, 65, 81);
+            guna2CheckBox2.UncheckedState.BorderRadius = 0;
+            guna2CheckBox2.UncheckedState.BorderThickness = 0;
+            guna2CheckBox2.UncheckedState.FillColor = Color.FromArgb(55, 65, 81);
+            guna2CheckBox2.UseVisualStyleBackColor = false;
+            guna2CheckBox2.CheckedChanged += guna2CheckBox2_CheckedChanged;
+            // 
+            // guna2TextBox3
+            // 
+            guna2TextBox3.BorderColor = Color.Transparent;
+            guna2TextBox3.CustomizableEdges = customizableEdges15;
+            guna2Transition17.SetDecoration(guna2TextBox3, Guna.UI2.AnimatorNS.DecorationType.None);
+            guna2TextBox3.DefaultText = "";
+            guna2TextBox3.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            guna2TextBox3.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            guna2TextBox3.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox3.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox3.FillColor = Color.FromArgb(55, 65, 81);
+            guna2TextBox3.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox3.Font = new Font("Segoe UI", 9F);
+            guna2TextBox3.ForeColor = Color.White;
+            guna2TextBox3.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox3.Location = new Point(66, 69);
+            guna2TextBox3.Name = "guna2TextBox3";
+            guna2TextBox3.PlaceholderText = "";
+            guna2TextBox3.SelectedText = "";
+            guna2TextBox3.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2TextBox3.Size = new Size(35, 19);
+            guna2TextBox3.TabIndex = 22;
+            // 
+            // guna2CheckBox1
+            // 
+            guna2CheckBox1.AutoSize = true;
+            guna2CheckBox1.BackColor = Color.FromArgb(18, 18, 18);
+            guna2CheckBox1.CheckedState.BorderColor = Color.FromArgb(31, 41, 55);
+            guna2CheckBox1.CheckedState.BorderRadius = 0;
+            guna2CheckBox1.CheckedState.BorderThickness = 0;
+            guna2CheckBox1.CheckedState.FillColor = Color.FromArgb(31, 41, 55);
+            guna2Transition17.SetDecoration(guna2CheckBox1, Guna.UI2.AnimatorNS.DecorationType.None);
+            guna2CheckBox1.Location = new Point(10, 69);
+            guna2CheckBox1.Name = "guna2CheckBox1";
+            guna2CheckBox1.Size = new Size(59, 19);
+            guna2CheckBox1.TabIndex = 21;
+            guna2CheckBox1.Text = "Range";
+            guna2CheckBox1.UncheckedState.BorderColor = Color.FromArgb(55, 65, 81);
+            guna2CheckBox1.UncheckedState.BorderRadius = 0;
+            guna2CheckBox1.UncheckedState.BorderThickness = 0;
+            guna2CheckBox1.UncheckedState.FillColor = Color.FromArgb(55, 65, 81);
+            guna2CheckBox1.UseVisualStyleBackColor = false;
+            guna2CheckBox1.CheckedChanged += guna2CheckBox1_CheckedChanged;
             // 
             // guna2CheckBox9
             // 
@@ -348,8 +651,7 @@
             guna2CheckBox9.CheckedState.BorderThickness = 0;
             guna2CheckBox9.CheckedState.FillColor = Color.FromArgb(31, 41, 55);
             guna2Transition17.SetDecoration(guna2CheckBox9, Guna.UI2.AnimatorNS.DecorationType.None);
-            guna2CheckBox9.Enabled = false;
-            guna2CheckBox9.Location = new Point(104, 80);
+            guna2CheckBox9.Location = new Point(207, 94);
             guna2CheckBox9.Name = "guna2CheckBox9";
             guna2CheckBox9.Size = new Size(83, 19);
             guna2CheckBox9.TabIndex = 20;
@@ -364,7 +666,7 @@
             // textBoxValue7
             // 
             textBoxValue7.BorderColor = Color.Transparent;
-            textBoxValue7.CustomizableEdges = customizableEdges5;
+            textBoxValue7.CustomizableEdges = customizableEdges17;
             guna2Transition17.SetDecoration(textBoxValue7, Guna.UI2.AnimatorNS.DecorationType.None);
             textBoxValue7.DefaultText = "";
             textBoxValue7.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -376,12 +678,12 @@
             textBoxValue7.Font = new Font("Segoe UI", 9F);
             textBoxValue7.ForeColor = Color.White;
             textBoxValue7.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            textBoxValue7.Location = new Point(225, 54);
+            textBoxValue7.Location = new Point(66, 117);
             textBoxValue7.Name = "textBoxValue7";
             textBoxValue7.PlaceholderText = "";
             textBoxValue7.SelectedText = "";
-            textBoxValue7.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            textBoxValue7.Size = new Size(47, 19);
+            textBoxValue7.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            textBoxValue7.Size = new Size(35, 19);
             textBoxValue7.TabIndex = 19;
             // 
             // checkBox9
@@ -393,7 +695,7 @@
             checkBox9.CheckedState.BorderThickness = 0;
             checkBox9.CheckedState.FillColor = Color.FromArgb(31, 41, 55);
             guna2Transition17.SetDecoration(checkBox9, Guna.UI2.AnimatorNS.DecorationType.None);
-            checkBox9.Location = new Point(166, 54);
+            checkBox9.Location = new Point(10, 117);
             checkBox9.Name = "checkBox9";
             checkBox9.Size = new Size(47, 19);
             checkBox9.TabIndex = 18;
@@ -408,7 +710,7 @@
             // textBoxValue6
             // 
             textBoxValue6.BorderColor = Color.Transparent;
-            textBoxValue6.CustomizableEdges = customizableEdges7;
+            textBoxValue6.CustomizableEdges = customizableEdges19;
             guna2Transition17.SetDecoration(textBoxValue6, Guna.UI2.AnimatorNS.DecorationType.None);
             textBoxValue6.DefaultText = "";
             textBoxValue6.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -420,12 +722,12 @@
             textBoxValue6.Font = new Font("Segoe UI", 9F);
             textBoxValue6.ForeColor = Color.White;
             textBoxValue6.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            textBoxValue6.Location = new Point(225, 104);
+            textBoxValue6.Location = new Point(166, 68);
             textBoxValue6.Name = "textBoxValue6";
             textBoxValue6.PlaceholderText = "";
             textBoxValue6.SelectedText = "";
-            textBoxValue6.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            textBoxValue6.Size = new Size(47, 19);
+            textBoxValue6.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            textBoxValue6.Size = new Size(35, 19);
             textBoxValue6.TabIndex = 15;
             // 
             // checkBox8
@@ -437,7 +739,7 @@
             checkBox8.CheckedState.BorderThickness = 0;
             checkBox8.CheckedState.FillColor = Color.FromArgb(31, 41, 55);
             guna2Transition17.SetDecoration(checkBox8, Guna.UI2.AnimatorNS.DecorationType.None);
-            checkBox8.Location = new Point(166, 104);
+            checkBox8.Location = new Point(107, 69);
             checkBox8.Name = "checkBox8";
             checkBox8.Size = new Size(61, 19);
             checkBox8.TabIndex = 14;
@@ -452,7 +754,7 @@
             // textBoxValue3
             // 
             textBoxValue3.BorderColor = Color.Transparent;
-            textBoxValue3.CustomizableEdges = customizableEdges9;
+            textBoxValue3.CustomizableEdges = customizableEdges21;
             guna2Transition17.SetDecoration(textBoxValue3, Guna.UI2.AnimatorNS.DecorationType.None);
             textBoxValue3.DefaultText = "";
             textBoxValue3.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -464,19 +766,19 @@
             textBoxValue3.Font = new Font("Segoe UI", 9F);
             textBoxValue3.ForeColor = Color.White;
             textBoxValue3.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            textBoxValue3.Location = new Point(72, 104);
+            textBoxValue3.Location = new Point(66, 93);
             textBoxValue3.Name = "textBoxValue3";
             textBoxValue3.PlaceholderText = "";
             textBoxValue3.SelectedText = "";
-            textBoxValue3.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            textBoxValue3.Size = new Size(44, 19);
+            textBoxValue3.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            textBoxValue3.Size = new Size(35, 19);
             textBoxValue3.TabIndex = 6;
             // 
             // textBoxValue1
             // 
             textBoxValue1.BackColor = Color.FromArgb(55, 65, 81);
             textBoxValue1.BorderColor = Color.Transparent;
-            textBoxValue1.CustomizableEdges = customizableEdges11;
+            textBoxValue1.CustomizableEdges = customizableEdges23;
             guna2Transition17.SetDecoration(textBoxValue1, Guna.UI2.AnimatorNS.DecorationType.None);
             textBoxValue1.DefaultText = "";
             textBoxValue1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -488,12 +790,12 @@
             textBoxValue1.Font = new Font("Segoe UI", 9F);
             textBoxValue1.ForeColor = Color.White;
             textBoxValue1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            textBoxValue1.Location = new Point(72, 54);
+            textBoxValue1.Location = new Point(255, 44);
             textBoxValue1.Name = "textBoxValue1";
             textBoxValue1.PlaceholderText = "";
             textBoxValue1.SelectedText = "";
-            textBoxValue1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            textBoxValue1.Size = new Size(44, 19);
+            textBoxValue1.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            textBoxValue1.Size = new Size(35, 19);
             textBoxValue1.TabIndex = 4;
             // 
             // checkBox4
@@ -505,7 +807,7 @@
             checkBox4.CheckedState.BorderThickness = 0;
             checkBox4.CheckedState.FillColor = Color.FromArgb(31, 41, 55);
             guna2Transition17.SetDecoration(checkBox4, Guna.UI2.AnimatorNS.DecorationType.None);
-            checkBox4.Location = new Point(21, 104);
+            checkBox4.Location = new Point(10, 93);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(46, 19);
             checkBox4.TabIndex = 3;
@@ -526,11 +828,11 @@
             checkBoxValue1.CheckedState.BorderThickness = 0;
             checkBoxValue1.CheckedState.FillColor = Color.FromArgb(31, 41, 55);
             guna2Transition17.SetDecoration(checkBoxValue1, Guna.UI2.AnimatorNS.DecorationType.None);
-            checkBoxValue1.Location = new Point(21, 54);
+            checkBoxValue1.Location = new Point(207, 44);
             checkBoxValue1.Name = "checkBoxValue1";
-            checkBoxValue1.Size = new Size(54, 19);
+            checkBoxValue1.Size = new Size(46, 19);
             checkBoxValue1.TabIndex = 1;
-            checkBoxValue1.Text = "Dano";
+            checkBoxValue1.Text = "ATA";
             checkBoxValue1.UncheckedState.BorderColor = Color.FromArgb(55, 65, 81);
             checkBoxValue1.UncheckedState.BorderRadius = 0;
             checkBoxValue1.UncheckedState.BorderThickness = 0;
@@ -541,7 +843,7 @@
             // textBoxValue4
             // 
             textBoxValue4.BorderColor = Color.Transparent;
-            textBoxValue4.CustomizableEdges = customizableEdges15;
+            textBoxValue4.CustomizableEdges = customizableEdges27;
             guna2Transition17.SetDecoration(textBoxValue4, Guna.UI2.AnimatorNS.DecorationType.None);
             textBoxValue4.DefaultText = "";
             textBoxValue4.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -558,7 +860,7 @@
             textBoxValue4.Name = "textBoxValue4";
             textBoxValue4.PlaceholderText = "";
             textBoxValue4.SelectedText = "";
-            textBoxValue4.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            textBoxValue4.ShadowDecoration.CustomizableEdges = customizableEdges28;
             textBoxValue4.Size = new Size(34, 19);
             textBoxValue4.TabIndex = 17;
             // 
@@ -603,7 +905,7 @@
             // 
             textBoxValue5.BackColor = Color.Gray;
             textBoxValue5.BorderColor = Color.Transparent;
-            textBoxValue5.CustomizableEdges = customizableEdges17;
+            textBoxValue5.CustomizableEdges = customizableEdges29;
             guna2Transition17.SetDecoration(textBoxValue5, Guna.UI2.AnimatorNS.DecorationType.None);
             textBoxValue5.DefaultText = "";
             textBoxValue5.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -620,7 +922,7 @@
             textBoxValue5.Name = "textBoxValue5";
             textBoxValue5.PlaceholderText = "";
             textBoxValue5.SelectedText = "";
-            textBoxValue5.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            textBoxValue5.ShadowDecoration.CustomizableEdges = customizableEdges30;
             textBoxValue5.Size = new Size(34, 19);
             textBoxValue5.TabIndex = 13;
             // 
@@ -666,13 +968,12 @@
             checkBox6.UncheckedState.BorderThickness = 0;
             checkBox6.UncheckedState.FillColor = Color.FromArgb(55, 65, 81);
             checkBox6.UseVisualStyleBackColor = false;
-            checkBox6.CheckedChanged += checkBox6_CheckedChanged_1;
             // 
             // textBoxValue2
             // 
             textBoxValue2.BackColor = Color.Gray;
             textBoxValue2.BorderColor = Color.Transparent;
-            textBoxValue2.CustomizableEdges = customizableEdges19;
+            textBoxValue2.CustomizableEdges = customizableEdges31;
             guna2Transition17.SetDecoration(textBoxValue2, Guna.UI2.AnimatorNS.DecorationType.None);
             textBoxValue2.DefaultText = "";
             textBoxValue2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -689,7 +990,7 @@
             textBoxValue2.Name = "textBoxValue2";
             textBoxValue2.PlaceholderText = "";
             textBoxValue2.SelectedText = "";
-            textBoxValue2.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            textBoxValue2.ShadowDecoration.CustomizableEdges = customizableEdges32;
             textBoxValue2.Size = new Size(34, 19);
             textBoxValue2.TabIndex = 5;
             // 
@@ -748,14 +1049,14 @@
             guna2GroupBox1.Controls.Add(txtPesquisarProcesso);
             guna2GroupBox1.Controls.Add(listBoxProcessos);
             guna2GroupBox1.CustomBorderColor = Color.DimGray;
-            guna2GroupBox1.CustomizableEdges = customizableEdges29;
+            guna2GroupBox1.CustomizableEdges = customizableEdges41;
             guna2Transition17.SetDecoration(guna2GroupBox1, Guna.UI2.AnimatorNS.DecorationType.None);
             guna2GroupBox1.FillColor = Color.FromArgb(19, 19, 19);
             guna2GroupBox1.Font = new Font("Segoe UI", 9F);
             guna2GroupBox1.ForeColor = Color.DarkGray;
             guna2GroupBox1.Location = new Point(11, 4);
             guna2GroupBox1.Name = "guna2GroupBox1";
-            guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges42;
             guna2GroupBox1.Size = new Size(293, 244);
             guna2GroupBox1.TabIndex = 0;
             guna2GroupBox1.Text = "Interação com o game:";
@@ -764,7 +1065,7 @@
             // 
             BtnAttachProcess1.BackColor = Color.FromArgb(18, 18, 18);
             BtnAttachProcess1.BorderRadius = 5;
-            BtnAttachProcess1.CustomizableEdges = customizableEdges21;
+            BtnAttachProcess1.CustomizableEdges = customizableEdges33;
             guna2Transition17.SetDecoration(BtnAttachProcess1, Guna.UI2.AnimatorNS.DecorationType.None);
             BtnAttachProcess1.DisabledState.BorderColor = Color.DarkGray;
             BtnAttachProcess1.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -777,7 +1078,7 @@
             BtnAttachProcess1.ForeColor = Color.DarkGray;
             BtnAttachProcess1.Location = new Point(155, 201);
             BtnAttachProcess1.Name = "BtnAttachProcess1";
-            BtnAttachProcess1.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            BtnAttachProcess1.ShadowDecoration.CustomizableEdges = customizableEdges34;
             BtnAttachProcess1.Size = new Size(132, 36);
             BtnAttachProcess1.TabIndex = 7;
             BtnAttachProcess1.Text = "Anexar";
@@ -788,7 +1089,7 @@
             txtProcessName.BackColor = Color.FromArgb(18, 18, 18);
             txtProcessName.BorderColor = Color.FromArgb(55, 65, 81);
             txtProcessName.BorderRadius = 5;
-            txtProcessName.CustomizableEdges = customizableEdges23;
+            txtProcessName.CustomizableEdges = customizableEdges35;
             guna2Transition17.SetDecoration(txtProcessName, Guna.UI2.AnimatorNS.DecorationType.None);
             txtProcessName.DefaultText = "";
             txtProcessName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -805,7 +1106,7 @@
             txtProcessName.PlaceholderForeColor = Color.Gray;
             txtProcessName.PlaceholderText = "game";
             txtProcessName.SelectedText = "";
-            txtProcessName.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            txtProcessName.ShadowDecoration.CustomizableEdges = customizableEdges36;
             txtProcessName.Size = new Size(140, 36);
             txtProcessName.TabIndex = 6;
             // 
@@ -813,7 +1114,7 @@
             // 
             btnAtualizarProcessos.BackColor = Color.FromArgb(18, 18, 18);
             btnAtualizarProcessos.BorderRadius = 5;
-            btnAtualizarProcessos.CustomizableEdges = customizableEdges25;
+            btnAtualizarProcessos.CustomizableEdges = customizableEdges37;
             guna2Transition17.SetDecoration(btnAtualizarProcessos, Guna.UI2.AnimatorNS.DecorationType.None);
             btnAtualizarProcessos.DisabledState.BorderColor = Color.DarkGray;
             btnAtualizarProcessos.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -826,7 +1127,7 @@
             btnAtualizarProcessos.ForeColor = Color.DarkGray;
             btnAtualizarProcessos.Location = new Point(153, 52);
             btnAtualizarProcessos.Name = "btnAtualizarProcessos";
-            btnAtualizarProcessos.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            btnAtualizarProcessos.ShadowDecoration.CustomizableEdges = customizableEdges38;
             btnAtualizarProcessos.Size = new Size(134, 36);
             btnAtualizarProcessos.TabIndex = 5;
             btnAtualizarProcessos.Text = "Atualizar";
@@ -837,7 +1138,7 @@
             txtPesquisarProcesso.BackColor = Color.FromArgb(18, 18, 18);
             txtPesquisarProcesso.BorderColor = Color.FromArgb(55, 65, 81);
             txtPesquisarProcesso.BorderRadius = 5;
-            txtPesquisarProcesso.CustomizableEdges = customizableEdges27;
+            txtPesquisarProcesso.CustomizableEdges = customizableEdges39;
             guna2Transition17.SetDecoration(txtPesquisarProcesso, Guna.UI2.AnimatorNS.DecorationType.None);
             txtPesquisarProcesso.DefaultText = "";
             txtPesquisarProcesso.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -855,7 +1156,7 @@
             txtPesquisarProcesso.PlaceholderForeColor = Color.Gray;
             txtPesquisarProcesso.PlaceholderText = "Pesquisar processo";
             txtPesquisarProcesso.SelectedText = "";
-            txtPesquisarProcesso.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            txtPesquisarProcesso.ShadowDecoration.CustomizableEdges = customizableEdges40;
             txtPesquisarProcesso.Size = new Size(140, 36);
             txtPesquisarProcesso.TabIndex = 4;
             txtPesquisarProcesso.TextChanged += txtPesquisarProcesso_TextChanged;
@@ -948,7 +1249,7 @@
             // guna2GradientButton1
             // 
             guna2GradientButton1.BorderRadius = 5;
-            guna2GradientButton1.CustomizableEdges = customizableEdges31;
+            guna2GradientButton1.CustomizableEdges = customizableEdges43;
             guna2Transition17.SetDecoration(guna2GradientButton1, Guna.UI2.AnimatorNS.DecorationType.None);
             guna2GradientButton1.DisabledState.BorderColor = Color.DarkGray;
             guna2GradientButton1.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -961,7 +1262,7 @@
             guna2GradientButton1.ForeColor = Color.DarkGray;
             guna2GradientButton1.Location = new Point(76, 161);
             guna2GradientButton1.Name = "guna2GradientButton1";
-            guna2GradientButton1.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            guna2GradientButton1.ShadowDecoration.CustomizableEdges = customizableEdges44;
             guna2GradientButton1.Size = new Size(180, 45);
             guna2GradientButton1.TabIndex = 9;
             guna2GradientButton1.Text = "Login";
@@ -972,7 +1273,7 @@
             guna2TextBox2.BackColor = Color.FromArgb(18, 18, 18);
             guna2TextBox2.BorderColor = Color.FromArgb(55, 65, 81);
             guna2TextBox2.BorderRadius = 5;
-            guna2TextBox2.CustomizableEdges = customizableEdges33;
+            guna2TextBox2.CustomizableEdges = customizableEdges45;
             guna2Transition17.SetDecoration(guna2TextBox2, Guna.UI2.AnimatorNS.DecorationType.None);
             guna2TextBox2.DefaultText = "";
             guna2TextBox2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -989,7 +1290,7 @@
             guna2TextBox2.PlaceholderForeColor = Color.Gray;
             guna2TextBox2.PlaceholderText = "Password";
             guna2TextBox2.SelectedText = "";
-            guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges46;
             guna2TextBox2.Size = new Size(180, 38);
             guna2TextBox2.TabIndex = 8;
             guna2TextBox2.UseSystemPasswordChar = true;
@@ -999,7 +1300,7 @@
             guna2TextBox1.BackColor = Color.FromArgb(18, 18, 18);
             guna2TextBox1.BorderColor = Color.FromArgb(55, 65, 81);
             guna2TextBox1.BorderRadius = 5;
-            guna2TextBox1.CustomizableEdges = customizableEdges35;
+            guna2TextBox1.CustomizableEdges = customizableEdges47;
             guna2Transition17.SetDecoration(guna2TextBox1, Guna.UI2.AnimatorNS.DecorationType.None);
             guna2TextBox1.DefaultText = "";
             guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -1016,10 +1317,9 @@
             guna2TextBox1.PlaceholderForeColor = Color.Gray;
             guna2TextBox1.PlaceholderText = "Login";
             guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges48;
             guna2TextBox1.Size = new Size(180, 38);
             guna2TextBox1.TabIndex = 7;
-            guna2TextBox1.TextChanged += guna2TextBox1_TextChanged;
             // 
             // tabPageWhat
             // 
@@ -1068,7 +1368,6 @@
             guna2HtmlLabel2.Size = new Size(163, 28);
             guna2HtmlLabel2.TabIndex = 1;
             guna2HtmlLabel2.Text = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Click += guna2HtmlLabel2_Click;
             // 
             // guna2HtmlLabel1
             // 
@@ -1096,7 +1395,7 @@
             guna2ImageButton1.Location = new Point(7, 231);
             guna2ImageButton1.Name = "guna2ImageButton1";
             guna2ImageButton1.PressedState.ImageSize = new Size(64, 64);
-            guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges37;
+            guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges49;
             guna2ImageButton1.Size = new Size(30, 25);
             guna2ImageButton1.TabIndex = 2;
             guna2ImageButton1.Click += guna2ImageButton1_Click;
@@ -1113,7 +1412,7 @@
             guna2ImageButton2.Location = new Point(42, 235);
             guna2ImageButton2.Name = "guna2ImageButton2";
             guna2ImageButton2.PressedState.ImageSize = new Size(64, 64);
-            guna2ImageButton2.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            guna2ImageButton2.ShadowDecoration.CustomizableEdges = customizableEdges50;
             guna2ImageButton2.Size = new Size(28, 18);
             guna2ImageButton2.TabIndex = 3;
             guna2ImageButton2.Click += guna2ImageButton2_Click;
@@ -1130,7 +1429,7 @@
             guna2ImageButton3.Location = new Point(155, 231);
             guna2ImageButton3.Name = "guna2ImageButton3";
             guna2ImageButton3.PressedState.ImageSize = new Size(64, 64);
-            guna2ImageButton3.ShadowDecoration.CustomizableEdges = customizableEdges39;
+            guna2ImageButton3.ShadowDecoration.CustomizableEdges = customizableEdges51;
             guna2ImageButton3.Size = new Size(27, 22);
             guna2ImageButton3.TabIndex = 4;
             guna2ImageButton3.Click += guna2ImageButton3_Click;
@@ -1248,5 +1547,17 @@
         public ComboBox comboBox1;
         private Guna.UI2.WinForms.Guna2CheckBox checkBox6;
         private System.Windows.Forms.Timer timer2;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox2;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox5;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox3;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox6;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox4;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox7;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox5;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox8;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox6;
     }
 }

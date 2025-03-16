@@ -257,5 +257,11 @@ namespace Cheat_VIP
         {
             return processHandle;
         }
+
+
+        public IntPtr GetProcessBaseAddress()
+        {
+            return process != null ? process.MainModule.BaseAddress : IntPtr.Zero;
+        }
     }
 }
